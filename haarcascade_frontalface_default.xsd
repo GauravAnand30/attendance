@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="opencv_storage">
+    <xs:complexType>
+      <xs:sequence minOccurs="0">
+        <xs:element name="cascade" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="stageType" type="xs:string" />
+              <xs:element name="featureType" type="xs:string" />
+              <xs:element name="height" type="xs:string" />
+              <xs:element name="width" type="xs:string" />
+              <xs:element name="stageParams">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="maxWeakCount" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="featureParams">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="maxCatCount" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="stageNum" type="xs:string" />
+              <xs:element name="stages" />
+            </xs:sequence>
+            <xs:attribute name="type_id" use="required" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="maxWeakCount" type="xs:string" />
+        <xs:element name="stageThreshold" type="xs:string" />
+        <xs:element name="weakClassifiers">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="_" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="internalNodes" type="xs:string" />
+                    <xs:element name="leafValues" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="stages" />
+  <xs:element name="features">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="_" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="rects">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="_" maxOccurs="unbounded" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="cascade" />
+</xs:schema>
